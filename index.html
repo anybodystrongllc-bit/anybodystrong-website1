@@ -1,1 +1,265 @@
-https://claude.ai/public/artifacts/0147b31c-e14e-4ff6-99c3-376be6b4c1a1
+2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AnyBody Strong</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3EFE4;
+    --paper-dim:#EAE3D2;
+    --driftwood:#8C8477;
+    --teal:#3E7A74;
+    --teal-deep:#2A5A55;
+    --ink:#25302E;
+    --line: rgba(37,48,46,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
+  .display{ font-family:'Anton', sans-serif; letter-spacing:0.01em; }
+  .label{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.14em; text-transform:uppercase; }
+  .condensed{ font-family:'Barlow Condensed', sans-serif; }
+  a{ color:inherit; text-decoration:none; }
+  button{ font-family:inherit; cursor:pointer; }
+  a:focus-visible, button:focus-visible, input:focus-visible{ outline:2px solid var(--teal); outline-offset:3px; }
+
+  nav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 18px 6vw; background:rgba(243,239,228,0.92); backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-mark{ display:flex; align-items:center; gap:12px; }
+  .nav-mark .box{ width:34px; height:34px; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Anton'; font-size:15px; flex-shrink:0; }
+  .nav-mark .word{ font-family:'Anton'; font-size:16px; letter-spacing:0.03em; line-height:1; }
+  .nav-links{ display:flex; gap:32px; font-family:'Barlow Condensed'; font-weight:600; font-size:15px; letter-spacing:0.02em; }
+  .nav-links a{ opacity:0.75; transition: opacity .2s; }
+  .nav-links a:hover{ opacity:1; }
+  .nav-cta{ display:none; }
+  @media(min-width:720px){ .nav-cta{ display:inline-flex; } }
+  .btn{
+    font-family:'Barlow Condensed'; font-weight:700; font-size:14px; letter-spacing:0.04em; text-transform:uppercase;
+    padding:11px 22px; border:2px solid var(--teal); background:var(--teal); color:#fff;
+    transition: transform .15s ease, background .2s ease; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{ transform:translateY(-2px); background:var(--teal-deep); }
+  .btn.ghost{ background:transparent; color:var(--ink); border-color:var(--ink); }
+  .btn.ghost:hover{ background:var(--ink); color:#fff; }
+
+  .hero{
+    min-height:88vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    padding: 60px 6vw 80px; position:relative; overflow:hidden;
+    background: linear-gradient(180deg, rgba(62,122,116,0.10) 0%, rgba(243,239,228,0) 55%);
+  }
+  .hero::before{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:40%;
+    background: repeating-linear-gradient(0deg, rgba(62,122,116,0.05) 0px, rgba(62,122,116,0.05) 1px, transparent 1px, transparent 12px);
+    pointer-events:none;
+  }
+  .eyebrow{ color:var(--teal); font-size:12px; margin-bottom:22px; position:relative; z-index:1; }
+  .wordmark{ font-size: clamp(52px, 11vw, 140px); line-height:0.9; color:var(--ink); position:relative; z-index:1; }
+  .wave-rule{ margin: 30px 0; position:relative; z-index:1; }
+  .tagline{ font-family:'Barlow Condensed'; font-weight:700; font-size: clamp(20px,2.6vw,28px); color:var(--teal-deep); letter-spacing:0.02em; margin-bottom:16px; position:relative; z-index:1; max-width:640px; }
+  .tagline-sub{ font-family:'Inter'; font-size:16px; color:#5c5a52; margin-bottom:36px; position:relative; z-index:1; max-width:560px; line-height:1.6; }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; position:relative; z-index:1; }
+
+  .marquee{ background:var(--teal-deep); color:var(--paper); overflow:hidden; white-space:nowrap; padding:16px 0; }
+  .marquee-track{ display:inline-block; animation: scroll 30s linear infinite; }
+  .marquee span{ font-family:'Anton'; font-size:17px; letter-spacing:0.05em; margin-right:40px; }
+  .marquee span.dot{ color:#B7D8D3; }
+  @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
+
+  section.block{ padding: 100px 6vw; border-bottom:1px solid var(--line); }
+  .head-row{ max-width:720px; margin-bottom:56px; }
+  .head-row .eyebrow{ margin-bottom:14px; }
+  .head-row h2{ font-size: clamp(30px,4vw,46px); }
+  .head-row p{ font-family:'Barlow Condensed'; font-size:18px; color:#5c5a52; margin-top:12px; line-height:1.5; }
+
+  .mission-grid{ display:grid; grid-template-columns: 1.1fr 1fr; gap:64px; align-items:start; }
+  @media (max-width:800px){ .mission-grid{ grid-template-columns:1fr; } }
+  .mission-copy p{ font-family:'Inter'; font-size:17px; line-height:1.75; color:#41453f; margin-bottom:20px; }
+  .mission-copy p:first-child{ font-family:'Barlow Condensed'; font-weight:600; font-size:22px; color:var(--ink); line-height:1.5; }
+  .mission-copy .closer{ font-family:'Anton'; font-size:22px; color:var(--teal-deep); line-height:1.3; margin-top:32px; }
+  .pillars{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
+  .pillar{ padding:22px 0; border-bottom:1px solid var(--line); }
+  .pillar .label{ color:var(--teal); font-size:11px; margin-bottom:8px; }
+  .pillar h4{ font-family:'Anton'; font-size:19px; margin-bottom:6px; }
+  .pillar p{ font-family:'Barlow Condensed'; font-size:15px; color:#5c5a52; line-height:1.4; }
+
+  .programs-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2px; background:var(--line); border:1px solid var(--line); }
+  .program-card{ background:var(--paper); padding:36px 28px; display:flex; flex-direction:column; min-height:280px; transition: background .2s ease; }
+  .program-card:hover{ background:#fff; }
+  .program-card .num{ font-family:'IBM Plex Mono'; font-size:12px; color:var(--teal); margin-bottom:20px; }
+  .program-card h3{ font-family:'Anton'; font-size:22px; margin-bottom:12px; }
+  .program-card p{ font-family:'Barlow Condensed'; font-size:16px; color:#5c5a52; line-height:1.5; flex-grow:1; }
+  .program-card .tag{ font-family:'IBM Plex Mono'; font-size:11px; color:var(--driftwood); margin-top:18px; letter-spacing:0.08em; }
+  .program-card.featured{ background:#fff; border-left:3px solid var(--teal); }
+
+  .resource-note{ background:var(--paper-dim); border:1px solid var(--line); padding:28px 32px; margin-top:32px; }
+  .resource-note .label{ color:var(--teal-deep); font-size:11px; margin-bottom:10px; display:block; }
+  .resource-note p{ font-family:'Inter'; font-size:15px; color:#41453f; line-height:1.6; }
+
+  .founding{ background:var(--ink); color:var(--paper); }
+  .founding .head-row h2{ color:#fff; }
+  .founding .head-row p{ color:#b7b6ac; }
+  .founding .eyebrow{ color:#7FC2BB; }
+  .form-row{ display:flex; gap:12px; flex-wrap:wrap; max-width:520px; }
+  .form-row input{
+    font-family:'Inter'; font-size:15px; padding:14px 16px; border:1px solid #3d4744; background:#1c2624; color:#fff; flex:1; min-width:200px;
+  }
+  .form-row input::placeholder{ color:#7d857f; }
+  .form-note{ font-family:'IBM Plex Mono'; font-size:12px; color:#7d857f; margin-top:16px; max-width:520px; line-height:1.6; }
+  .success-msg{ display:none; font-family:'Barlow Condensed'; font-weight:600; font-size:17px; color:#8fd3c8; margin-top:18px; }
+  .success-msg.show{ display:block; }
+
+  footer{ padding:56px 6vw; display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px; align-items:center; }
+  footer .foot-mark{ font-family:'Anton'; font-size:16px; }
+  footer .foot-links{ display:flex; gap:26px; font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.05em; color:#5c5a52; }
+  footer .foot-links a:hover{ color:var(--ink); }
+  footer .copyright{ font-family:'IBM Plex Mono'; font-size:11px; color:#8a8a7f; width:100%; margin-top:20px; }
+
+  @media (max-width:640px){ .nav-links{ display:none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-mark">
+    <div class="box">AS</div>
+    <div class="word">ANYBODY STRONG</div>
+  </div>
+  <div class="nav-links">
+    <a href="#mission">Our Approach</a>
+    <a href="#programs">Programs</a>
+    <a href="#join">Join</a>
+  </div>
+  <a href="#join" class="btn nav-cta">Get Notified</a>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow label">Coming Soon</div>
+  <h1 class="wordmark display">ANYBODY STRONG</h1>
+  <svg class="wave-rule" width="220" height="20" viewBox="0 0 220 20" fill="none">
+    <path d="M0 10 Q 18 0, 36 10 T 72 10 T 108 10 T 144 10 T 180 10 T 220 10" stroke="#3E7A74" stroke-width="3" fill="none"/>
+  </svg>
+  <p class="tagline">Every Body. Every Ability. Every Victory.</p>
+  <p class="tagline-sub">An adaptive functional fitness center where exercise, behavior science, and community intersect — currently in the works.</p>
+  <div class="hero-ctas">
+    <a href="#join" class="btn">Get Notified When We Open</a>
+    <a href="#mission" class="btn ghost">Our Approach</a>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>EVERY BODY</span><span class="dot">·</span><span>EVERY ABILITY</span><span class="dot">·</span><span>EVERY VICTORY</span><span class="dot">·</span>
+    <span>EVERY BODY</span><span class="dot">·</span><span>EVERY ABILITY</span><span class="dot">·</span><span>EVERY VICTORY</span><span class="dot">·</span>
+  </div>
+</div>
+
+<section class="block" id="mission">
+  <div class="head-row">
+    <div class="eyebrow label">Why We're Building This</div>
+    <h2 class="display">The Premier Adaptive Functional Fitness Center</h2>
+  </div>
+  <div class="mission-grid">
+    <div class="mission-copy">
+      <p>Very few gyms combine evidence-based behavioral support with real strength and conditioning. We're building the ones that do.</p>
+      <p>Our mission is to empower neurodivergent athletes through functional fitness — building confidence, independence, social skills, emotional regulation, and lifelong health, one session at a time.</p>
+      <p>This isn't a fitness gimmick bolted onto a therapy practice, or a therapy program bolted onto a gym. It's both disciplines, built together from day one, coached by people credentialed in each.</p>
+      <p class="closer">This becomes much bigger than fitness. It becomes a place families trust.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="label">Evidence-Based</div>
+        <h4>Behavior science, not guesswork</h4>
+        <p>Programming led by a credentialed BCBA, not just a coach improvising inclusion.</p>
+      </div>
+      <div class="pillar">
+        <div class="label">Functional Fitness</div>
+        <h4>Real strength and conditioning</h4>
+        <p>Every athlete trains — scaled, coached, and taken seriously, not just kept busy.</p>
+      </div>
+      <div class="pillar">
+        <div class="label">Community</div>
+        <h4>A place families trust</h4>
+        <p>For athletes and the people who show up with them every week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="programs">
+  <div class="head-row">
+    <div class="eyebrow label">What We'll Offer</div>
+    <h2 class="display">Programs</h2>
+    <p>Three programs, one coaching standard.</p>
+  </div>
+  <div class="programs-grid">
+    <div class="program-card">
+      <div class="num label">Group</div>
+      <h3>Functional Fitness Classes</h3>
+      <p>Coached group classes built around varied functional movement — strength, gymnastics, and conditioning, scaled to whoever shows up that day.</p>
+    </div>
+    <div class="program-card">
+      <div class="num label">1-on-1</div>
+      <h3>Personal Training</h3>
+      <p>One-on-one coaching for members who want focused technique work, a specific goal, or a schedule the group classes don't cover.</p>
+    </div>
+    <div class="program-card featured">
+      <div class="num label">Adaptive</div>
+      <h3>Adaptive Athlete Program</h3>
+      <p>In-house sessions for neurodivergent athletes, led by a credentialed BCBA alongside our strength coaches — functional fitness and behavioral support in the same session, not two separate appointments.</p>
+      <div class="tag">IN DEVELOPMENT</div>
+    </div>
+  </div>
+  <div class="resource-note">
+    <span class="label">For NJ Families</span>
+    <p>New Jersey's Division of Developmental Disabilities (DDD) runs programs that may help eligible families access additional support for services like this one. We'll share specifics on how the Adaptive Athlete Program relates to DDD services as that program gets closer to launch.</p>
+  </div>
+</section>
+
+<section class="block founding" id="join">
+  <div class="head-row">
+    <div class="eyebrow label">Stay In The Loop</div>
+    <h2 class="display">Get Notified When We Open</h2>
+    <p>No spam, no schedule yet — just a heads-up the moment there's a real address and an opening date.</p>
+  </div>
+  <form class="form-row" id="foundingForm">
+    <input type="email" id="emailInput" placeholder="you@email.com" required>
+    <button type="submit" class="btn">Notify Me</button>
+  </form>
+  <p class="success-msg" id="successMsg">Opening your email — send the message to finish signing up.</p>
+  <p class="form-note">Preview note: there's no mailing list service connected yet, so this opens a pre-filled email to anybodystrongllc@gmail.com instead. Swap in Mailchimp/ConvertKit/a Google Form later for something more automated.</p>
+</section>
+
+<footer>
+  <div class="foot-mark">ANYBODY STRONG</div>
+  <div class="foot-links">
+    <a href="#">Instagram</a>
+    <a href="#">anybodystrong.com</a>
+  </div>
+  <div class="copyright">© 2026 AnyBody Strong.</div>
+</footer>
+
+<script>
+  document.getElementById('foundingForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    if(!email) return;
+    const subject = encodeURIComponent('AnyBody Strong — notify me when you open');
+    const body = encodeURIComponent('Please add me to the list: ' + email);
+    window.location.href = 'mailto:anybodystrongllc@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('successMsg').classList.add('show');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
+Content is user-generated and unverified.
