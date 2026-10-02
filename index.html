@@ -170,6 +170,16 @@
   .terms-body .note{ background:var(--paper-dim); border-left:3px solid var(--ocean); padding:14px 18px; margin:10px 0; }
   .terms-body a{ color:var(--ocean); text-decoration:underline; }
   #terms summary::-webkit-details-marker{ display:none; }
+
+  .price-wrap{ overflow-x:auto; border:1px solid var(--line); }
+  .price-table{ width:100%; border-collapse:collapse; min-width:520px; }
+  .price-table th{ background:var(--navy); color:#fff; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; text-align:left; padding:14px 18px; }
+  .price-table td{ padding:14px 18px; border-top:1px solid var(--line); font-family:'Barlow Condensed'; font-size:18px; font-weight:600; color:var(--navy); }
+  .price-table td:last-child{ color:var(--ocean); }
+  .price-table .sub{ display:block; font-family:'IBM Plex Mono'; font-size:11px; font-weight:400; color:#8a8478; letter-spacing:0.04em; margin-top:2px; }
+  .price-table tr.mem td{ background:var(--paper-dim); }
+  .price-table tr.best td:first-child{ border-left:3px solid var(--ocean); }
+  .sub-head{ font-family:'Anton'; font-size:24px; color:var(--navy); margin-bottom:18px; }
 </style>
 </head>
 <body>
@@ -351,31 +361,77 @@
 
 <section class="block" id="book">
   <div class="head-row">
-    <div class="eyebrow label">Book Now</div>
-    <h2 class="display">Book Your 1-on-1 Session</h2>
-    <p>Pick a time that works and lock it in. Availability and pricing are set through the calendar below.</p>
+    <div class="eyebrow label">Pricing &amp; Booking</div>
+    <h2 class="display">Same Price, Any Location</h2>
+    <p>Every session is 60 minutes, one-on-one. Pick your plan, then choose where you train each time you book.</p>
   </div>
+
+  <div class="price-wrap">
+    <table class="price-table">
+      <thead><tr><th>Option</th><th>Price</th><th>Per Session</th><th>You Save</th></tr></thead>
+      <tbody>
+        <tr><td>Single Session</td><td>$80</td><td>$80</td><td>&mdash;</td></tr>
+        <tr><td>4-Pack <span class="sub">valid 60 days</span></td><td>$300</td><td>$75</td><td>$20</td></tr>
+        <tr><td>8-Pack <span class="sub">valid 90 days</span></td><td>$560</td><td>$70</td><td>$80</td></tr>
+        <tr class="mem"><td>Membership 1x/Week <span class="sub">4 sessions/mo</span></td><td>$290/mo</td><td>$72.50</td><td>$30/mo</td></tr>
+        <tr class="mem best"><td>Membership 2x/Week <span class="sub">8 sessions/mo &middot; most popular</span></td><td>$540/mo</td><td>$67.50</td><td>$100/mo</td></tr>
+        <tr class="mem"><td>Membership 3x/Week <span class="sub">12 sessions/mo</span></td><td>$780/mo</td><td>$65</td><td>$180/mo</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="form-note" style="color:#8a8478; margin:14px 0 48px;">Memberships include a full TrueCoach program for your off days, app messaging, and a monthly progress check (2x and 3x/week add nutrition and habit targets). Packs include TrueCoach app access to track your workouts. Memberships have a 3-month minimum, then cancel anytime with 30 days' notice. Pay annually and get 2 months free.</p>
+
+  <h3 class="sub-head">Choose Where You Train</h3>
   <div class="programs-grid" style="margin-bottom:56px;">
     <div class="program-card">
-      <div class="num label">Format</div>
+      <div class="num label">Location</div>
       <h3>In-Partner Facility</h3>
-      <p>A large, fully-equipped commercial gym at Iron Strong Athletics, our partner facility in North Brunswick. You'll have full access to real gym equipment, and you'll be sharing the gym floor with other members training at the same time, same as any commercial gym.</p>
-      <div class="tag">$80 single &middot; $300 / 4-pack &middot; $560 / 8-pack</div>
+      <p>A large, fully-equipped privately owned gym at Iron Strong Athletics, our partner facility in North Brunswick. We'll have full access to gym equipment, and you may occasionally be sharing the gym floor with other members, though most sessions run privately.</p>
+      <div class="tag">832 Ridgewood Ave, North Brunswick</div>
     </div>
     <div class="program-card">
-      <div class="num label">Format</div>
+      <div class="num label">Location</div>
       <h3>In-Studio Sessions</h3>
-      <p>A smaller, more private studio space at 7 Livingston Ave, New Brunswick, with zero commute for you. Just you and your coach, no crowd, no waiting on equipment.</p>
-      <div class="tag">$75 single &middot; $280 / 4-pack &middot; $520 / 8-pack</div>
+      <p>A smaller, more private studio space. Just you and your coach, no crowd, no waiting on equipment.</p>
+      <div class="tag">7 Livingston Ave, New Brunswick</div>
     </div>
     <div class="program-card">
-      <div class="num label">Format</div>
+      <div class="num label">Location</div>
       <h3>In-Home Sessions</h3>
-      <p>I come to you. Train using your own equipment and space, zero commute for you, zero excuses. Best if you've already got the basics at home.</p>
-      <div class="tag">$90 single &middot; $340 / 4-pack &middot; $640 / 8-pack</div>
+      <p>I come to you. Train using your own equipment and space, zero commute for you, zero excuses. Best if you've already got the basics at home. Locations beyond 15 miles may incur an additional travel fee based on distance.</p>
+      <div class="tag">Within 15 miles of New Brunswick</div>
     </div>
   </div>
-  <p class="form-note" style="color:#8a8478; margin-bottom:32px;">Packages are purchased upfront and redeemed session-by-session. Reach out directly to set up a package, or book a single session below to get started.</p>
+
+  <h3 class="sub-head">Train Anywhere</h3>
+  <div class="programs-grid" style="margin-bottom:24px;">
+    <div class="program-card">
+      <div class="num label">Online</div>
+      <h3>Program &middot; $99/mo</h3>
+      <p>A custom training program built for your goals in the TrueCoach app, updated monthly, with in-app messaging support.</p>
+      <div class="tag">CANCEL ANYTIME</div>
+    </div>
+    <div class="program-card featured">
+      <div class="num label">Online</div>
+      <h3>Coached &middot; $199/mo</h3>
+      <p>Everything in Program, plus weekly check-ins with written feedback, form video reviews, and nutrition and habit targets.</p>
+      <div class="tag">CANCEL ANYTIME</div>
+    </div>
+    <div class="program-card">
+      <div class="num label">Online</div>
+      <h3>Premium &middot; $299/mo</h3>
+      <p>Everything in Coached, plus a 30-minute video call every two weeks and priority same-day messaging.</p>
+      <div class="tag">CANCEL ANYTIME</div>
+    </div>
+    <div class="program-card">
+      <div class="num label">Hybrid</div>
+      <h3>Hybrid &middot; $349/mo</h3>
+      <p>Everything in Coached online, plus 2 one-on-one sessions per month at our private In-Studio location.</p>
+      <div class="tag">3-MONTH MINIMUM</div>
+    </div>
+  </div>
+  <p class="form-note" style="color:#8a8478; margin-bottom:48px;">Ready to start? Book a single session below, or reach out to set up a pack, membership, or coaching plan.</p>
+
   <!--
     HOW TO ACTIVATE THIS CALENDAR, JOEL:
     1. In Calendly, open your single-session event type.
@@ -387,7 +443,7 @@
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <div class="resource-note">
     <span class="label">A Quick Note on Location</span>
-    <p>In-facility sessions take place at Iron Strong Athletics, 832 Ridgewood Ave, North Brunswick Township, NJ 08902. AnyBody Strong is not affiliated with Iron Strong Athletics in any way beyond their generous agreement to let us use the space for training sessions.</p>
+    <p>AnyBody Strong is not affiliated with Iron Strong Athletics beyond their agreement to let us use the space.</p>
   </div>
 </section>
 
@@ -420,7 +476,7 @@
   <p>AnyBody Strong LLC ("AnyBody Strong," "we," "us") provides personal training and fitness coaching led by a NASM Certified Personal Trainer. By purchasing any session, package, membership, or coaching plan, you agree to these Terms.</p>
 
   <h2>2. Services</h2>
-  <p>We offer one-on-one in-person training at three locations (In-Partner Facility, In-Studio, In-Home), multi-session packs, monthly memberships, online coaching, and hybrid coaching. What's included in each option is described at the time of purchase.</p>
+  <p>We offer one-on-one in-person training at three locations (In-Partner Facility, In-Studio, In-Home), multi-session packs, monthly memberships, online coaching, and hybrid coaching. In-person prices are the same at every location, and you choose your location each time you book. What's included in each option is described at the time of purchase.</p>
 
   <h2>3. Booking and Payment</h2>
   <p>All services are paid in advance by card through Stripe. Sessions are booked through our online scheduling system. Packs, memberships, and hybrid plans are booked through a private scheduling link provided after purchase.</p>
@@ -436,6 +492,7 @@
   <h2>5. Packs</h2>
   <ul>
     <li>4-Packs expire 60 days from purchase. 8-Packs expire 90 days from purchase. Unused sessions expire with the pack.</li>
+    <li>Pack sessions can be used at any of our three locations.</li>
     <li>Packs are for the purchaser only and are not transferable.</li>
     <li>A pack can be refunded within 14 days of purchase if no sessions have been used. After a session is used or after 14 days, packs are non-refundable.</li>
   </ul>
@@ -444,6 +501,7 @@
   <ul>
     <li>Memberships and hybrid plans bill automatically every month on your start date until canceled.</li>
     <li><strong>There is a 3-month minimum commitment.</strong> After 3 months, you may cancel anytime with 30 days' written notice.</li>
+    <li>Membership sessions can be used at any of our three locations. Hybrid plan sessions take place at our In-Studio location.</li>
     <li>Sessions included each month expire at the end of that billing month and do not roll over.</li>
     <li>Members may pause once per year for up to 1 month by notifying us before their next billing date.</li>
     <li>To cancel, contact us directly at <a href="mailto:anybodystrongllc@gmail.com">anybodystrongllc@gmail.com</a>.</li>
@@ -473,7 +531,7 @@
   <ul>
     <li>In-Partner Facility sessions take place at Iron Strong Athletics, 832 Ridgewood Ave, North Brunswick Township, NJ 08902. You agree to follow that facility's rules.</li>
     <li>In-Studio sessions take place at 7 Livingston Ave, New Brunswick, NJ 08901.</li>
-    <li>For In-Home sessions, you're responsible for providing a safe, clear space and safe equipment.</li>
+    <li>In-Home sessions are available within 15 miles of New Brunswick, NJ, on scheduled In-Home days. Locations beyond 15 miles may incur an additional travel fee based on distance, quoted before booking. You're responsible for providing a safe, clear space and safe equipment.</li>
   </ul>
   <div class="note"><p style="margin:0;">AnyBody Strong is not affiliated with Iron Strong Athletics beyond their agreement to let us use the space.</p></div>
 
