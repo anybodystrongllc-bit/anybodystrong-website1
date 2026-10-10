@@ -193,6 +193,24 @@
   .price-table .sub{ display:block; font-family:'IBM Plex Mono'; font-size:11px; font-weight:400; color:#8a8478; letter-spacing:0.04em; margin-top:2px; }
   .price-table tr.mem td{ background:var(--paper-dim); }
   .price-table tr.best td:first-child{ border-left:3px solid var(--ocean); }
+  @media (max-width:640px){
+    .price-wrap{ border:none; overflow:visible; }
+    .price-table{ min-width:0; display:block; }
+    .price-table thead{ display:none; }
+    .price-table tbody{ display:block; }
+    .price-table tr{ display:grid; grid-template-columns:1fr auto; gap:4px 12px; align-items:center; border:1px solid var(--line); margin-bottom:12px; padding:14px 16px; background:#fff; }
+    .price-table tr.mem{ background:var(--paper-dim); }
+    .price-table tr.best{ border-left:3px solid var(--ocean); }
+    .price-table td, .price-table tr.mem td{ display:block; padding:0; border:0; background:none; }
+    .price-table tr.best td:first-child{ border-left:0; }
+    .price-table td:nth-child(1){ grid-column:1; grid-row:1; }
+    .price-table td:nth-child(2){ grid-column:2; grid-row:1; text-align:right; font-size:22px; }
+    .price-table td:nth-child(3), .price-table td:nth-child(4){ grid-column:1 / -1; font-family:'IBM Plex Mono'; font-size:12px; font-weight:400; color:#8a8478; }
+    .price-table td:nth-child(3)::before{ content:'Per session: '; }
+    .price-table td:nth-child(4)::before{ content:'You save: '; }
+    .price-table td:nth-child(5){ grid-column:1 / -1; margin-top:10px; }
+    .price-table td:nth-child(5) .btn{ width:100%; justify-content:center; padding:12px 16px; }
+  }
   .sub-head{ font-family:'Anton'; font-size:24px; color:var(--navy); margin-bottom:18px; }
 </style>
 </head>
