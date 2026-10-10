@@ -64,6 +64,20 @@
     transition: transform .15s ease, background .2s ease; display:inline-flex; align-items:center; gap:8px;
   }
   .btn:hover{ transform:translateY(-2px); background:#3d9e83; }
+  .btn-sm{ padding:8px 16px; font-size:13px; white-space:nowrap; }
+  .founding-banner{ background:var(--navy); color:#fff; border-left:6px solid var(--ocean); padding:32px clamp(20px,4vw,40px); margin:0 0 40px; display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; }
+  .founding-banner .fb-eyebrow{ font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--seafoam); margin-bottom:10px; }
+  .founding-banner h3{ font-family:'Anton'; font-size:clamp(28px,4vw,44px); line-height:1.05; margin-bottom:12px; font-weight:400; }
+  .founding-banner h3 span{ color:var(--ocean); }
+  .founding-banner p{ color:#d5dadd; font-size:16px; line-height:1.6; margin-bottom:10px; max-width:640px; }
+  .founding-banner .fb-code{ font-family:'IBM Plex Mono'; font-size:13px; color:var(--seafoam); }
+  .founding-banner .fb-code b{ background:rgba(167,212,207,0.15); padding:3px 9px; letter-spacing:0.08em; color:#fff; }
+  .fb-count{ text-align:center; border:2px solid var(--ocean); padding:20px 28px; min-width:170px; }
+  .fb-count .n{ font-family:'Anton'; font-size:64px; line-height:1; color:var(--ocean); }
+  .fb-count .l{ font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#d5dadd; margin-top:8px; }
+  @media (max-width:720px){ .founding-banner{ grid-template-columns:1fr; } .fb-count{ justify-self:start; } }
+  .hero-founding{ position:relative; z-index:1; display:inline-block; margin:0 0 22px; padding:8px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; }
+  .hero-founding b{ color:var(--ocean); }
   .btn.ghost{ background:transparent; color:var(--navy); border-color:var(--navy); }
   .btn.ghost:hover{ background:var(--navy); color:#fff; }
 
@@ -193,9 +207,9 @@
   </button>
   <div class="nav-links" id="navLinks">
     <a href="#coach">Your Coach</a>
+    <a href="#book">Book a Session</a>
     <a href="#whats-next">What's Next</a>
     <a href="#mission">Our Approach</a>
-    <a href="#book">Book a Session</a>
   </div>
   <div class="nav-social" style="display:flex; align-items:center; gap:12px; margin-right:20px;">
     <a href="https://www.instagram.com/anybodystrong" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex; width:34px; height:34px; align-items:center; justify-content:center; border-radius:50%; background:var(--seafoam); transition:opacity .2s;">
@@ -218,8 +232,9 @@
   </h1>
   <p class="tagline">Every Body. Every Ability. Every Victory.</p>
   <p class="tagline-sub">Building an adaptive functional fitness center where exercise, behavior science, and community will intersect. 1-on-1 personal training launching soon.</p>
+  <div class="hero-founding"><b>Founding offer:</b> first 10 clients get 15% off for life &middot; 10 of 10 spots open</div>
   <div class="hero-ctas">
-    <a href="#book" class="btn">Reserve Your Spot</a>
+    <a href="https://calendly.com/anybodystrongllc/free-assessment-30-min" class="btn" target="_blank" rel="noopener">Book Your Free Assessment</a>
     <a href="#coach" class="btn ghost">Meet Your Coach</a>
   </div>
 </section>
@@ -228,29 +243,6 @@
   <div class="marquee-track">
     <span>EVERY BODY</span><span class="dot">·</span><span>EVERY ABILITY</span><span class="dot">·</span><span>EVERY VICTORY</span><span class="dot">·</span>
     <span>EVERY BODY</span><span class="dot">·</span><span>EVERY ABILITY</span><span class="dot">·</span><span>EVERY VICTORY</span><span class="dot">·</span>
-  </div>
-</div>
-
-<div class="pillar-strip">
-  <div class="pillar-chip">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M2 15 Q 6 10 12 15 T 22 15" stroke="#4EBFA1" stroke-width="2" fill="none"/></svg>
-    Inclusive Community
-  </div>
-  <div class="pillar-chip">
-    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="#EAD9C1" stroke-width="2"/><line x1="12" y1="2" x2="12" y2="5" stroke="#EAD9C1" stroke-width="2"/><line x1="12" y1="19" x2="12" y2="22" stroke="#EAD9C1" stroke-width="2"/></svg>
-    San Diego Rooted
-  </div>
-  <div class="pillar-chip">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 C12 2 6 10 6 15 A6 6 0 0 0 18 15 C18 10 12 2 12 2 Z" stroke="#4EBFA1" stroke-width="2"/></svg>
-    Functional Fitness
-  </div>
-  <div class="pillar-chip">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M2 8 Q6 4 10 8 T18 8 T22 8 M2 14 Q6 10 10 14 T18 14 T22 14" stroke="#A7D4CF" stroke-width="2" fill="none"/></svg>
-    Mental Toughness
-  </div>
-  <div class="pillar-chip">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C0.5 8 2 4 6 4c2 0 4 1.5 6 4 2-2.5 4-4 6-4 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z" stroke="#1F2933" stroke-width="1.6"/></svg>
-    Lasting Impact
   </div>
 </div>
 
@@ -293,6 +285,130 @@
     </div>
   </div>
 </section>
+
+<section class="block" id="book">
+  <div class="head-row">
+    <div class="eyebrow label">Pricing &amp; Booking</div>
+    <h2 class="display">Same Price, Any Location</h2>
+    <p>Every session is 60 minutes, one-on-one. Pick your plan, then choose where you train each time you book.</p>
+  </div>
+
+    <div class="founding-banner">
+    <div>
+      <div class="fb-eyebrow">Founding Client Offer &middot; Limited to 10</div>
+      <h3>Be one of the first 10 and get <span>15% off for life.</span></h3>
+      <p>The first 10 clients to join a membership, online plan, or Hybrid lock in 15% off every month, for as long as you stay. When the 10 spots are gone, this rate is gone for good.</p>
+      <p class="fb-code">Enter code <b>FOUNDING15</b> at checkout.</p>
+    </div>
+    <div class="fb-count"><div class="n">10<span style="font-size:28px;color:#fff;"> / 10</span></div><div class="l">Founding spots open</div></div>
+  </div>
+
+  <div class="price-wrap">
+    <table class="price-table">
+      <thead><tr><th>Option</th><th>Price</th><th>Per Session</th><th>You Save</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Single Session</td><td>$80</td><td>$80</td><td>&mdash;</td><td><a href="#schedule" class="btn btn-sm">Book</a></td></tr>
+        <tr><td>4-Pack <span class="sub">valid 60 days</span></td><td>$300</td><td>$75</td><td>$20</td><td><a href="https://buy.stripe.com/8x200d4rz7onavOdwB3wQ00" class="btn btn-sm" target="_blank" rel="noopener">Buy Now</a></td></tr>
+        <tr><td>8-Pack <span class="sub">valid 90 days</span></td><td>$560</td><td>$70</td><td>$80</td><td><a href="https://buy.stripe.com/6oU6oB3nvdML33mdwB3wQ01" class="btn btn-sm" target="_blank" rel="noopener">Buy Now</a></td></tr>
+        <tr class="mem"><td>Membership 1x/Week <span class="sub">4 sessions/mo</span></td><td>$290/mo</td><td>$72.50</td><td>$30/mo</td><td><a href="https://buy.stripe.com/28E6oB6zHaAz33mfEJ3wQ06" class="btn btn-sm" target="_blank" rel="noopener">Buy Now</a></td></tr>
+        <tr class="mem best"><td>Membership 2x/Week <span class="sub">8 sessions/mo &middot; most popular</span></td><td>$540/mo</td><td>$67.50</td><td>$100/mo</td><td><a href="https://buy.stripe.com/28E8wJ2jrdML7jC78d3wQ08" class="btn btn-sm" target="_blank" rel="noopener">Buy Now</a></td></tr>
+        <tr class="mem"><td>Membership 3x/Week <span class="sub">12 sessions/mo</span></td><td>$780/mo</td><td>$65</td><td>$180/mo</td><td><a href="https://buy.stripe.com/fZu8wJ1fndML47q6493wQ0a" class="btn btn-sm" target="_blank" rel="noopener">Buy Now</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="form-note" style="color:#8a8478; margin:14px 0 48px;">Memberships include a full TrueCoach program for your off days, app messaging, and a monthly progress check (2x and 3x/week add nutrition and habit targets). Packs include TrueCoach app access to track your workouts. Memberships have a 3-month minimum, then cancel anytime with 30 days' notice. Pay annually and get 2 months free.</p>
+
+  <h3 class="sub-head">Choose Where You Train</h3>
+  <div class="programs-grid" style="margin-bottom:56px;">
+    <div class="program-card">
+      <div class="num label">Location</div>
+      <h3>In-Partner Facility</h3>
+      <p>A large, fully-equipped privately owned gym, our partner facility in North Brunswick. We'll have full access to gym equipment, and you may occasionally be sharing the gym floor with other members, though most sessions run privately.</p>
+      <div class="tag">North Brunswick</div>
+    </div>
+    <div class="program-card">
+      <div class="num label">Location</div>
+      <h3>In-Studio Sessions</h3>
+      <p>A smaller, more private studio space. Just you and your coach, no crowd, no waiting on equipment.</p>
+      <div class="tag">New Brunswick</div>
+    </div>
+    <div class="program-card">
+      <div class="num label">Location</div>
+      <h3>In-Home Sessions</h3>
+      <p>I come to you. Train using your own equipment and space, zero commute for you, zero excuses. Best if you've already got the basics at home. Locations beyond 15 miles may incur an additional travel fee based on distance.</p>
+      <div class="tag">Within 15 miles of New Brunswick</div>
+    </div>
+  </div>
+
+  <div class="resource-note" style="margin:-32px 0 56px;">
+    <span class="label">Good to Know</span>
+    <p>Exact addresses are provided when you book your session.</p>
+  </div>
+
+  <h3 class="sub-head">Train Anywhere</h3>
+  <div class="programs-grid" style="margin-bottom:24px;">
+    <div class="program-card">
+      <div class="num label">Online</div>
+      <h3>Program &middot; $99/mo</h3>
+      <p>A custom training program built for your goals in the TrueCoach app, updated monthly, with in-app messaging support.</p>
+      <div class="tag">CANCEL ANYTIME</div>
+      <div style="margin-top:16px;"><a href="https://buy.stripe.com/eVqbIV7DL6kj33mcsx3wQ0c" class="btn btn-sm" target="_blank" rel="noopener">Start Program</a></div>
+    </div>
+    <div class="program-card featured">
+      <div class="num label">Online</div>
+      <h3>Coached &middot; $199/mo</h3>
+      <p>Everything in Program, plus weekly check-ins with written feedback, form video reviews, and nutrition and habit targets.</p>
+      <div class="tag">CANCEL ANYTIME</div>
+      <div style="margin-top:16px;"><a href="https://buy.stripe.com/8x2cMZ1fn243bzS1NT3wQ0f" class="btn btn-sm" target="_blank" rel="noopener">Start Coached</a></div>
+    </div>
+    <div class="program-card">
+      <div class="num label">Online</div>
+      <h3>Premium &middot; $299/mo</h3>
+      <p>Everything in Coached, plus a 30-minute video call every two weeks and priority same-day messaging.</p>
+      <div class="tag">3-MONTH MINIMUM</div>
+      <div style="margin-top:16px;"><a href="https://buy.stripe.com/5kQeV71fn3877jC9gl3wQ0g" class="btn btn-sm" target="_blank" rel="noopener">Start Premium</a></div>
+    </div>
+    <div class="program-card">
+      <div class="num label">Hybrid</div>
+      <h3>Hybrid &middot; $349/mo</h3>
+      <p>Everything in Coached online, plus 2 one-on-one sessions per month at our private In-Studio location.</p>
+      <div class="tag">3-MONTH MINIMUM</div>
+      <div style="margin-top:16px;"><a href="https://buy.stripe.com/cNieV73nv3876fy5053wQ0i" class="btn btn-sm" target="_blank" rel="noopener">Start Hybrid</a></div>
+    </div>
+  </div>
+  <p class="form-note" style="color:#8a8478; margin-bottom:48px;">Ready to start? Hit Buy Now on any plan above, or book a single session below. Not sure where to begin? <a href="https://calendly.com/anybodystrongllc/free-assessment-30-min" target="_blank" rel="noopener" style="color:var(--ocean);">Book a free 30-minute assessment</a>.</p>
+
+  <div id="schedule"></div>
+  <!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/anybodystrongllc" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+</section>
+
+
+
+<div class="pillar-strip">
+  <div class="pillar-chip">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M2 15 Q 6 10 12 15 T 22 15" stroke="#4EBFA1" stroke-width="2" fill="none"/></svg>
+    Inclusive Community
+  </div>
+  <div class="pillar-chip">
+    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="#EAD9C1" stroke-width="2"/><line x1="12" y1="2" x2="12" y2="5" stroke="#EAD9C1" stroke-width="2"/><line x1="12" y1="19" x2="12" y2="22" stroke="#EAD9C1" stroke-width="2"/></svg>
+    San Diego Rooted
+  </div>
+  <div class="pillar-chip">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 C12 2 6 10 6 15 A6 6 0 0 0 18 15 C18 10 12 2 12 2 Z" stroke="#4EBFA1" stroke-width="2"/></svg>
+    Functional Fitness
+  </div>
+  <div class="pillar-chip">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M2 8 Q6 4 10 8 T18 8 T22 8 M2 14 Q6 10 10 14 T18 14 T22 14" stroke="#A7D4CF" stroke-width="2" fill="none"/></svg>
+    Mental Toughness
+  </div>
+  <div class="pillar-chip">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C0.5 8 2 4 6 4c2 0 4 1.5 6 4 2-2.5 4-4 6-4 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z" stroke="#1F2933" stroke-width="1.6"/></svg>
+    Lasting Impact
+  </div>
+</div>
 
 <section class="block" id="whats-next">
   <div class="head-row">
@@ -358,95 +474,6 @@
 </section>
 
 
-
-<section class="block" id="book">
-  <div class="head-row">
-    <div class="eyebrow label">Pricing &amp; Booking</div>
-    <h2 class="display">Same Price, Any Location</h2>
-    <p>Every session is 60 minutes, one-on-one. Pick your plan, then choose where you train each time you book.</p>
-  </div>
-
-  <div class="price-wrap">
-    <table class="price-table">
-      <thead><tr><th>Option</th><th>Price</th><th>Per Session</th><th>You Save</th></tr></thead>
-      <tbody>
-        <tr><td>Single Session</td><td>$80</td><td>$80</td><td>&mdash;</td></tr>
-        <tr><td>4-Pack <span class="sub">valid 60 days</span></td><td>$300</td><td>$75</td><td>$20</td></tr>
-        <tr><td>8-Pack <span class="sub">valid 90 days</span></td><td>$560</td><td>$70</td><td>$80</td></tr>
-        <tr class="mem"><td>Membership 1x/Week <span class="sub">4 sessions/mo</span></td><td>$290/mo</td><td>$72.50</td><td>$30/mo</td></tr>
-        <tr class="mem best"><td>Membership 2x/Week <span class="sub">8 sessions/mo &middot; most popular</span></td><td>$540/mo</td><td>$67.50</td><td>$100/mo</td></tr>
-        <tr class="mem"><td>Membership 3x/Week <span class="sub">12 sessions/mo</span></td><td>$780/mo</td><td>$65</td><td>$180/mo</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="form-note" style="color:#8a8478; margin:14px 0 48px;">Memberships include a full TrueCoach program for your off days, app messaging, and a monthly progress check (2x and 3x/week add nutrition and habit targets). Packs include TrueCoach app access to track your workouts. Memberships have a 3-month minimum, then cancel anytime with 30 days' notice. Pay annually and get 2 months free.</p>
-
-  <h3 class="sub-head">Choose Where You Train</h3>
-  <div class="programs-grid" style="margin-bottom:56px;">
-    <div class="program-card">
-      <div class="num label">Location</div>
-      <h3>In-Partner Facility</h3>
-      <p>A large, fully-equipped privately owned gym, our partner facility in North Brunswick. We'll have full access to gym equipment, and you may occasionally be sharing the gym floor with other members, though most sessions run privately.</p>
-      <div class="tag">North Brunswick</div>
-    </div>
-    <div class="program-card">
-      <div class="num label">Location</div>
-      <h3>In-Studio Sessions</h3>
-      <p>A smaller, more private studio space. Just you and your coach, no crowd, no waiting on equipment.</p>
-      <div class="tag">New Brunswick</div>
-    </div>
-    <div class="program-card">
-      <div class="num label">Location</div>
-      <h3>In-Home Sessions</h3>
-      <p>I come to you. Train using your own equipment and space, zero commute for you, zero excuses. Best if you've already got the basics at home. Locations beyond 15 miles may incur an additional travel fee based on distance.</p>
-      <div class="tag">Within 15 miles of New Brunswick</div>
-    </div>
-  </div>
-
-  <div class="resource-note" style="margin:-32px 0 56px;">
-    <span class="label">Good to Know</span>
-    <p>Exact addresses are provided when you book your session.</p>
-  </div>
-
-  <h3 class="sub-head">Train Anywhere</h3>
-  <div class="programs-grid" style="margin-bottom:24px;">
-    <div class="program-card">
-      <div class="num label">Online</div>
-      <h3>Program &middot; $99/mo</h3>
-      <p>A custom training program built for your goals in the TrueCoach app, updated monthly, with in-app messaging support.</p>
-      <div class="tag">CANCEL ANYTIME</div>
-    </div>
-    <div class="program-card featured">
-      <div class="num label">Online</div>
-      <h3>Coached &middot; $199/mo</h3>
-      <p>Everything in Program, plus weekly check-ins with written feedback, form video reviews, and nutrition and habit targets.</p>
-      <div class="tag">CANCEL ANYTIME</div>
-    </div>
-    <div class="program-card">
-      <div class="num label">Online</div>
-      <h3>Premium &middot; $299/mo</h3>
-      <p>Everything in Coached, plus a 30-minute video call every two weeks and priority same-day messaging.</p>
-      <div class="tag">3-MONTH MINIMUM</div>
-    </div>
-    <div class="program-card">
-      <div class="num label">Hybrid</div>
-      <h3>Hybrid &middot; $349/mo</h3>
-      <p>Everything in Coached online, plus 2 one-on-one sessions per month at our private In-Studio location.</p>
-      <div class="tag">3-MONTH MINIMUM</div>
-    </div>
-  </div>
-  <p class="form-note" style="color:#8a8478; margin-bottom:48px;">Ready to start? Book a single session below, or reach out to set up a pack, membership, or coaching plan.</p>
-
-  <!--
-    HOW TO ACTIVATE THIS CALENDAR, JOEL:
-    1. In Calendly, open your single-session event type.
-    2. Click "Share" -> "Add to Website" -> "Inline Embed" -> copy the data-url shown there.
-    3. Replace the placeholder URL below (the one starting "https://calendly.com/your-link/session-name")
-       with your real one. That's the only change needed.
-  -->
-  <div class="calendly-inline-widget" data-url="https://calendly.com/your-link/session-name" style="min-width:320px; height:700px;"></div>
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-</section>
 
 <section class="block founding" id="join">
   <div class="head-row">
